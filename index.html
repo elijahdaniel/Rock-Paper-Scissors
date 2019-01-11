@@ -5,8 +5,16 @@
         <script>
      function computerPlay() {
          let play = ['rock', 'paper', 'scissors'];
+         let choice = play[Math.floor(Math.random() * play.length)]
+         return choice;
      }
 
+     let playerScore = 0;
+     let computerScore = 0;
+
+    function game() {
+        while (playerScore + computerScore < 5) {
+            
     function playRound(playerSelection, computerSelection) {
         if ((playerSelection === 'rock') && (computerSelection === 'paper')) {
             return "You lose! Paper beats Rock!"
@@ -28,9 +36,14 @@
             return "You win! Paper beats Rock!"
         }
     }
+
     let playerSelection = prompt('Choose: Rock. Paper. Scissors.').toLowerCase();
     let computerSelection = computerPlay();
-    console.log(playRound(playerSelection, 'rock'))
+    console.log(playRound(playerSelection, computerSelection))
+    }
+    }
+
+    game();
         </script>
     </body>
 
